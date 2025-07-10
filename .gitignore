@@ -1,0 +1,8 @@
+# Entornos virtuales
+retoADSweb-env/
+__pycache__/
+*.pyc
+
+# Archivos de sistema
+.DS_Store
+.env
