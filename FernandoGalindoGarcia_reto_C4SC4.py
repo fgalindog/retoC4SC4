@@ -4,7 +4,8 @@ import pandas as pd
 import altair as alt
 
 # Datos
-df = pd.read_csv('Employee_data.csv')
+url = "https://raw.githubusercontent.com/fgalindog/retoC4SC4/main/Employee_data.csv"
+df = pd.read_csv(url)
 df['gender'] = df['gender'].astype(str).str.strip()
 
 # Config
@@ -20,7 +21,7 @@ with col1:
 st.divider()
 
 # 2. Logo de la empresa
-image_url = "img\logo_.jpeg"
+image_url = "https://github.com/fgalindog/retoC4SC4/blob/main/img/logo_.jpeg?raw=true"
 st.sidebar.image(image_url, 
          caption='Social Knowledge', 
          use_container_width=False) 
