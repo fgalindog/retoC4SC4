@@ -1,0 +1,224 @@
+{\rtf1\ansi\deff0\deftab480
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+{\f008 Courier New;}
+{\f009 Courier New;}
+{\f010 Courier New;}
+{\f011 Courier New;}
+{\f012 Courier New;}
+{\f013 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green000\blue000;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red136\green000\blue136;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red000\green128\blue255;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f1752462592\fs20\cb27\cf26 \highlight3\cf2 # 0. Librerias, datos y configuracion de pagina\highlight1\cf0 \par
+\highlight11\cf10\b import\highlight1\cf0\b0  \highlight19\cf18 streamlit\highlight1\cf0  \highlight11\cf10\b as\highlight1\cf0\b0  \highlight19\cf18 st\highlight1\cf0 \par
+\highlight11\cf10\b import\highlight1\cf0\b0  \highlight19\cf18 pandas\highlight1\cf0  \highlight11\cf10\b as\highlight1\cf0\b0  \highlight19\cf18 pd\highlight1\cf0 \par
+\highlight11\cf10\b import\highlight1\cf0\b0  \highlight19\cf18 altair\highlight1\cf0  \highlight11\cf10\b as\highlight1\cf0\b0  \highlight19\cf18 alt\highlight1\cf0 \par
+\par
+\highlight3\cf2 # Datos\highlight1\cf0 \par
+\highlight19\cf18 df\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 pd\highlight17\cf16\b .\highlight25\cf24\b0\i0 read_csv\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Employee_data.csv'\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight19\cf18 df\highlight17\cf16\b [\highlight9\cf8\b0 'gender'\highlight17\cf16\b ]\highlight1\cf0\b0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 df\highlight17\cf16\b [\highlight9\cf8\b0 'gender'\highlight17\cf16\b ].\highlight25\cf24\b0\i0 astype\highlight17\cf16\b\i0 (\highlight21\cf20 str\highlight17\cf16 ).\highlight21\cf20 str\highlight17\cf16 .\highlight25\cf24\b0\i0 strip\highlight17\cf16\b\i0 ()\highlight1\cf0\b0 \par
+\par
+\highlight3\cf2 # Config\highlight1\cf0 \par
+\highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 set_page_config\highlight17\cf16\b\i0 (\highlight19\cf18\b0 layout\highlight17\cf16\b =\highlight7\cf6\b0 "wide"\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 write\highlight17\cf16\b\i0 (\highlight9\cf8\b0 '<style>div.block-container\{padding-top:0rem;\}</style>'\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 unsafe_allow_html\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0 \par
+\par
+\highlight3\cf2 # 1. T\u237?tulos y descripci\u243?n del dashboard (mas control con markdown que con st.header o title)\highlight1\cf0 \par
+\highlight19\cf18 col1\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 col3\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 columns\highlight17\cf16\b\i0 (\highlight5\cf4\b0 3\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col1\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 markdown\highlight17\cf16\b\i0 (\highlight13\cf12\b0 '''## Reto Fernando Galindo C4SC4 :+1:\par
+### Streamlit Dashboard\par
+##### An\u225?lisis de la base de datos de empleados de la empresa Socialize your Knowledge'''\highlight17\cf16\b )\highlight1\cf0\b0  \highlight3\cf2 # sth.subheader\highlight1\cf0 \par
+\highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 divider\highlight17\cf16\b\i0 ()\highlight1\cf0\b0 \par
+\par
+\highlight3\cf2 # 2. Logo de la empresa\highlight1\cf0 \par
+\highlight19\cf18 image_url\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight7\cf6 "img\\logo_.jpeg"\highlight1\cf0 \par
+\highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 sidebar\highlight17\cf16\b\i0 .\highlight25\cf24\b0\i0 image\highlight17\cf16\b\i0 (\highlight19\cf18\b0 image_url\highlight17\cf16\b ,\highlight1\cf0\b0  \par
+         \highlight19\cf18 caption\highlight17\cf16\b =\highlight9\cf8\b0 'Social Knowledge'\highlight17\cf16\b ,\highlight1\cf0\b0  \par
+         \highlight19\cf18 use_container_width\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 )\highlight1\cf0\b0  \par
+\par
+\highlight3\cf2 # 3. Control para seleccionar g\u233?nero del empleado\highlight1\cf0 \par
+\highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 sidebar\highlight17\cf16\b\i0 .\highlight25\cf24\b0\i0 header\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Filtros:'\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight19\cf18 genero\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 sidebar\highlight17\cf16\b\i0 .\highlight25\cf24\b0\i0 radio\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+    \highlight7\cf6 "Selecci\u243?n de g\u233?nero:"\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+    \highlight19\cf18 options\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight17\cf16\b [\highlight9\cf8\b0 'Femenino'\highlight17\cf16\b ,\highlight9\cf8\b0 'Masculino'\highlight17\cf16\b ,\highlight9\cf8\b0 'Todos'\highlight17\cf16\b ],\highlight1\cf0\b0 \par
+    \highlight19\cf18 index\highlight17\cf16\b =\highlight21\cf20 None\highlight1\cf0\b0   \highlight3\cf2 # sin seleccion por defecto\highlight1\cf0 \par
+\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight11\cf10\b if\highlight1\cf0\b0  \highlight19\cf18 genero\highlight1\cf0  \highlight17\cf16\b ==\highlight1\cf0\b0  \highlight9\cf8 'Femenino'\highlight17\cf16\b :\highlight1\cf0\b0 \par
+        \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 write\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Genero seleccionado: Femenino'\highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight11\cf10\b elif\highlight1\cf0\b0  \highlight19\cf18 genero\highlight1\cf0  \highlight17\cf16\b ==\highlight1\cf0\b0  \highlight9\cf8 'Masculino'\highlight17\cf16\b :\highlight1\cf0\b0 \par
+        \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 write\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Genero seleccionado: Masculino'\highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight11\cf10\b else\highlight17\cf16 :\highlight1\cf0\b0 \par
+        \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 write\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Genero seleccionado: Todos'\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # 4. Seleccion de rango de puntaje de desempeno del empleado\highlight1\cf0 \par
+\highlight19\cf18 calMin\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 calMax\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 sidebar\highlight17\cf16\b\i0 .\highlight25\cf24\b0\i0 slider\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+    \highlight9\cf8 'Seleccione un rango de calificaciones:'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+    \highlight19\cf18 min_value\highlight17\cf16\b =\highlight19\cf18\b0 df\highlight17\cf16\b [\highlight9\cf8\b0 'performance_score'\highlight17\cf16\b ].\highlight21\cf20 min\highlight17\cf16 (),\highlight1\cf0\b0  \par
+    \highlight19\cf18 max_value\highlight17\cf16\b =\highlight19\cf18\b0 df\highlight17\cf16\b [\highlight9\cf8\b0 'performance_score'\highlight17\cf16\b ].\highlight21\cf20 max\highlight17\cf16 (),\highlight1\cf0\b0 \par
+    \highlight19\cf18 value\highlight17\cf16\b =(\highlight5\cf4\b0 1\highlight17\cf16\b ,\highlight5\cf4\b0 4\highlight17\cf16\b ),\highlight1\cf0\b0 \par
+    \highlight19\cf18 step\highlight17\cf16\b =\highlight5\cf4\b0 1\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 write\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Rango de calificacion seleccionado:'\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 calMin\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight9\cf8 ' - '\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 calMax\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # 5. Seleccion de estado civil del empleado\highlight1\cf0 \par
+\highlight19\cf18 civil\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 sidebar\highlight17\cf16\b\i0 .\highlight25\cf24\b0\i0 selectbox\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight7\cf6 "Seleccione estado civil de los Empleados"\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+        \highlight19\cf18 df\highlight17\cf16\b [\highlight9\cf8\b0 'marital_status'\highlight17\cf16\b ].\highlight25\cf24\b0\i0 unique\highlight17\cf16\b\i0 (),\highlight1\cf0\b0 \par
+        \highlight19\cf18 index\highlight17\cf16\b =\highlight21\cf20 None\highlight17\cf16 ,\highlight1\cf0\b0 \par
+        \highlight19\cf18 placeholder\highlight17\cf16\b =\highlight7\cf6\b0 "Estatus..."\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+        \highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 write\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'Estado civil:'\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 civil\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # Resumen de indicadores\highlight1\cf0 \par
+\highlight19\cf18 df2Filtro\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 df\highlight17\cf16\b .\highlight25\cf24\b0\i0 copy\highlight17\cf16\b\i0 ()\highlight1\cf0\b0 \par
+\highlight11\cf10\b if\highlight1\cf0\b0  \highlight19\cf18 genero\highlight1\cf0  \highlight11\cf10\b and\highlight1\cf0\b0  \highlight19\cf18 genero\highlight1\cf0  \highlight17\cf16\b !=\highlight1\cf0\b0  \highlight9\cf8 'Todos'\highlight17\cf16\b :\highlight1\cf0\b0  \highlight3\cf2 # condicion para unicamente M o F Filtro para genero\highlight1\cf0 \par
+    \highlight19\cf18 df2Filtro\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 df2Filtro\highlight17\cf16\b [\highlight19\cf18\b0 df2Filtro\highlight17\cf16\b [\highlight9\cf8\b0 'gender'\highlight17\cf16\b ]\highlight1\cf0\b0  \highlight17\cf16\b ==\highlight1\cf0\b0  \highlight19\cf18 genero\highlight17\cf16\b [\highlight5\cf4\b0 0\highlight17\cf16\b ]]\highlight1\cf0\b0   \highlight3\cf2 # 1a letra\highlight1\cf0 \par
+\highlight11\cf10\b if\highlight1\cf0\b0  \highlight17\cf16\b (\highlight19\cf18\b0 calMin\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 calMax\highlight17\cf16\b ):\highlight1\cf0\b0   \highlight3\cf2 # filtro de score\highlight1\cf0 \par
+    \highlight19\cf18 df2Filtro\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 df2Filtro\highlight17\cf16\b [\highlight1\cf0\b0 \par
+        \highlight17\cf16\b (\highlight19\cf18\b0 df2Filtro\highlight17\cf16\b [\highlight9\cf8\b0 'performance_score'\highlight17\cf16\b ]\highlight1\cf0\b0  \highlight17\cf16\b >=\highlight1\cf0\b0  \highlight19\cf18 calMin\highlight17\cf16\b )\highlight1\cf0\b0  \highlight17\cf16\b &\highlight1\cf0\b0  \par
+        \highlight17\cf16\b (\highlight19\cf18\b0 df2Filtro\highlight17\cf16\b [\highlight9\cf8\b0 'performance_score'\highlight17\cf16\b ]\highlight1\cf0\b0  \highlight17\cf16\b <=\highlight1\cf0\b0  \highlight19\cf18 calMax\highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight17\cf16\b ]\highlight1\cf0\b0 \par
+\highlight11\cf10\b if\highlight1\cf0\b0  \highlight19\cf18 civil\highlight17\cf16\b :\highlight1\cf0\b0  \highlight3\cf2 #filtro estado civil\highlight1\cf0 \par
+    \highlight19\cf18 df2Filtro\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 df2Filtro\highlight17\cf16\b [\highlight19\cf18\b0 df2Filtro\highlight17\cf16\b [\highlight9\cf8\b0 'marital_status'\highlight17\cf16\b ]\highlight1\cf0\b0  \highlight17\cf16\b ==\highlight1\cf0\b0  \highlight19\cf18 civil\highlight17\cf16\b ]\highlight1\cf0\b0 \par
+\par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col3\highlight17\cf16\b :\highlight1\cf0\b0  \highlight3\cf2 # agregado\highlight1\cf0 \par
+    \highlight3\cf2 #st.metric("Empleados:", len(df2Filtro)) # se obtiene cantidad de registros\highlight1\cf0 \par
+    \highlight19\cf18 s\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight23\cf22 f"<p style='font-size:120px;'>\{\highlight21\cf20\b len\highlight17\cf16 (\highlight19\cf18\b0 df2Filtro\highlight17\cf16\b )\highlight23\cf22\b0 \}</p>"\highlight1\cf0 \par
+    \highlight3\cf2 #st.text('empleados')\highlight1\cf0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 markdown\highlight17\cf16\b\i0 (\highlight19\cf18\b0 s\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 unsafe_allow_html\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0  \par
+    \highlight3\cf2 #st.title(len(df2Filtro))\highlight1\cf0 \par
+\par
+\par
+\highlight3\cf2 # 6. Distribuci\u243?n de los puntajes de desempe\u241?o\highlight1\cf0 \par
+\highlight19\cf18 col1\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 col3\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 columns\highlight17\cf16\b\i0 (\highlight5\cf4\b0 3\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col1\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 desempenoFreq\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 df\highlight17\cf16\b ).\highlight25\cf24\b0\i0 mark_bar\highlight17\cf16\b\i0 ().\highlight25\cf24\b0\i0 encode\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 X\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'performance_score:N'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Evaluacion de desempeno'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 axis\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Axis\highlight17\cf16\b\i0 (\highlight19\cf18\b0 labelAngle\highlight17\cf16\b =\highlight5\cf4\b0 0\highlight17\cf16\b )),\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Y\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'count():Q'\highlight17\cf16\b ,\highlight19\cf18\b0 title\highlight17\cf16\b =\highlight9\cf8\b0 'Cantidad de empleados'\highlight17\cf16\b )).\highlight25\cf24\b0\i0 properties\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Distribuci\u243?n de Puntajes de Desempe\u241?o'\highlight1\cf0 \par
+    \highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 altair_chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 desempenoFreq\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 use_container_width\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # 7. Promedio de horas trabajadas por el g\u233?nero del empleado\highlight1\cf0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 horasGenero\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 df\highlight17\cf16\b ).\highlight25\cf24\b0\i0 mark_point\highlight17\cf16\b\i0 (\highlight19\cf18\b0 size\highlight17\cf16\b =\highlight5\cf4\b0 200\highlight17\cf16\b ,\highlight19\cf18\b0 filled\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 ).\highlight25\cf24\b0\i0 encode\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 X\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'gender:N'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'G\u233?nero'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 axis\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Axis\highlight17\cf16\b\i0 (\highlight19\cf18\b0 labelAngle\highlight17\cf16\b =\highlight5\cf4\b0 0\highlight17\cf16\b )),\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Y\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'mean(average_work_hours):Q'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Horas promedio trabajadas'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight19\cf18\b0 zero\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 )),\highlight1\cf0\b0 \par
+        \highlight19\cf18 color\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Color\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'gender:N'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+                        \highlight19\cf18 legend\highlight17\cf16\b =\highlight21\cf20 None\highlight17\cf16 ,\highlight1\cf0\b0 \par
+                        \highlight19\cf18 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+                            \highlight19\cf18 domain\highlight17\cf16\b =[\highlight9\cf8\b0 'F'\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight9\cf8 'M'\highlight17\cf16\b ],\highlight1\cf0\b0   \highlight3\cf2 # ojo M contiene espacio, falta limpieza de la bdd\highlight1\cf0 \par
+                            \highlight21\cf20\b range\highlight17\cf16 =[\highlight9\cf8\b0 '#FF6B6B'\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight7\cf6 "#27DD0F"\highlight17\cf16\b ]))).\highlight25\cf24\b0\i0 properties\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Horas trabajadas promedio y G\u233?nero'\highlight1\cf0 \par
+    \highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 altair_chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 horasGenero\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 use_container_width\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # 8. Edad de los empleados con respecto al salario\highlight1\cf0 \par
+\highlight19\cf18 col1\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 col2\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 columns\highlight17\cf16\b\i0 (\highlight5\cf4\b0 2\highlight17\cf16\b )\highlight1\cf0\b0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col1\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 edadSalario\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 df\highlight17\cf16\b ).\highlight25\cf24\b0\i0 mark_circle\highlight17\cf16\b\i0 ().\highlight25\cf24\b0\i0 encode\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 X\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'age:Q'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Edad de empleado'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+            \highlight19\cf18 axis\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Axis\highlight17\cf16\b\i0 (\highlight19\cf18\b0 labelAngle\highlight17\cf16\b =\highlight5\cf4\b0 0\highlight17\cf16\b ),\highlight1\cf0\b0 \par
+            \highlight19\cf18 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight19\cf18\b0 zero\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 )),\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Y\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'salary:Q'\highlight17\cf16\b ,\highlight19\cf18\b0 title\highlight17\cf16\b =\highlight9\cf8\b0 'Salario'\highlight17\cf16\b ,\highlight19\cf18\b0 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight19\cf18\b0 zero\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 ))).\highlight25\cf24\b0\i0 properties\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Distribuci\u243?n de Salarios por Edad de Empleado'\highlight1\cf0 \par
+    \highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 altair_chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 edadSalario\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 use_container_width\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0 \par
+\par
+\highlight3\cf2 # Grafico adiconal\highlight1\cf0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col2\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 edadSalario2\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 df\highlight17\cf16\b ).\highlight25\cf24\b0\i0 mark_line\highlight17\cf16\b\i0 ().\highlight25\cf24\b0\i0 encode\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 x\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 X\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'age:Q'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+                \highlight21\cf20\b bin\highlight17\cf16 =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Bin\highlight17\cf16\b\i0 (\highlight19\cf18\b0 step\highlight17\cf16\b =\highlight5\cf4\b0 10\highlight17\cf16\b ),\highlight1\cf0\b0  \par
+                \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Edad'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+                \highlight19\cf18 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight19\cf18\b0 zero\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 )),\highlight1\cf0\b0 \par
+        \highlight19\cf18 y\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Y\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'mean(salary):Q'\highlight17\cf16\b ,\highlight1\cf0\b0  \par
+                \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Salario Promedio'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+                \highlight19\cf18 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight19\cf18\b0 zero\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 ))).\highlight25\cf24\b0\i0 properties\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Media Salarial por Rangos de Edad'\highlight1\cf0 \par
+    \highlight17\cf16\b )\highlight1\cf0\b0 \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 altair_chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 edadSalario2\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 use_container_width\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # 9. Relaci\u243?n del promedio de horas trabajadas versus el puntaje de desempe\u241?o\highlight1\cf0 \par
+\highlight11\cf10\b with\highlight1\cf0\b0  \highlight19\cf18 col3\highlight17\cf16\b :\highlight1\cf0\b0 \par
+    \highlight19\cf18 line_chart\highlight1\cf0  \highlight17\cf16\b =\highlight1\cf0\b0  \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 df\highlight17\cf16\b ).\highlight25\cf24\b0\i0 mark_line\highlight17\cf16\b\i0 (\highlight19\cf18\b0 point\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 ,\highlight1\cf0\b0  \highlight19\cf18 strokeWidth\highlight17\cf16\b =\highlight5\cf4\b0 3\highlight17\cf16\b ).\highlight25\cf24\b0\i0 encode\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 X\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'performance_score:N'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+              \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Grado de desempe\u241?o'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+              \highlight19\cf18 axis\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Axis\highlight17\cf16\b\i0 (\highlight19\cf18\b0 labelAngle\highlight17\cf16\b =\highlight5\cf4\b0 0\highlight17\cf16\b )),\highlight1\cf0\b0 \par
+        \highlight19\cf18 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Y\highlight17\cf16\b\i0 (\highlight9\cf8\b0 'mean(average_work_hours):Q'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+              \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Horas promedio trabajadas'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+              \highlight19\cf18 scale\highlight17\cf16\b =\highlight19\cf18\b0 alt\highlight17\cf16\b .\highlight25\cf24\b0\i0 Scale\highlight17\cf16\b\i0 (\highlight19\cf18\b0 zero\highlight17\cf16\b =\highlight21\cf20 False\highlight17\cf16 )),\highlight1\cf0\b0         \par
+    \highlight17\cf16\b ).\highlight25\cf24\b0\i0 properties\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 title\highlight17\cf16\b =\highlight9\cf8\b0 'Horas trabajadas promedio por Nivel de Rendimiento'\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+        \highlight19\cf18 width\highlight17\cf16\b =\highlight5\cf4\b0 500\highlight1\cf0 \par
+    \highlight17\cf16\b ).\highlight25\cf24\b0\i0 configure_point\highlight17\cf16\b\i0 (\highlight1\cf0\b0 \par
+        \highlight19\cf18 size\highlight17\cf16\b =\highlight5\cf4\b0 200\highlight17\cf16\b ,\highlight1\cf0\b0 \par
+        \highlight19\cf18 filled\highlight17\cf16\b =\highlight21\cf20 True\highlight1\cf0\b0 \par
+    \highlight17\cf16\b )\highlight1\cf0\b0     \par
+    \highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 altair_chart\highlight17\cf16\b\i0 (\highlight19\cf18\b0 line_chart\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 use_container_width\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )\highlight1\cf0\b0 \par
+\par
+\par
+\highlight3\cf2 # 10. Conclusi\u243?n sobre el reporte\highlight1\cf0 \par
+\highlight19\cf18 st\highlight17\cf16\b .\highlight25\cf24\b0\i0 markdown\highlight17\cf16\b\i0 (\highlight15\cf14\b0 """\par
+            <div style="\par
+            border-left: 5px solid #4e73df;\par
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);">\par
+            <h4 style="color: #4e73df; margin-top: 0;">An\u225?lisis Final</h4>\par
+            <p style="margin-bottom: 0;">\par
+            Se analizaron 311 registros correspondientes a la base de datos de Recursos Humanos de la empresa Social Knowledge. De estos 176 son mujeres y 135 hombres. Se muestran las relaciones entre diversas variables, como horas trabajadas promedio, grado de desempe\u241?o, edad, g\u233?nero y salarios. En cuanto a rendimiento, casi 250 empleados se encuentran en una calificaci\u243?n de 3 (Fully completion), este rendimiento se ve afectado por la cantidad promedio de horas trabajdas, donde desempe\u241?os bajos (1 y 2) podr\u237?an corresponder a pocas o demasiadas horas. El g\u233?nero tambi\u233?n es un diferenciador entre la cantidad de horas promedio, resultando en que las mujeres trabajan en promedio una semana extra al a\u241?o con respecto a los hombres. Por \u250?ltimo, para salarios entre 60,000 y 100,000, parece haber una relaci\u243?n positiva con la edad del trabajador; se recomiendan validar estas deducciones estad\u237?sticamente.\par
+            </p>\par
+            </div>"""\highlight17\cf16\b ,\highlight1\cf0\b0  \highlight19\cf18 unsafe_allow_html\highlight17\cf16\b =\highlight21\cf20 True\highlight17\cf16 )}
